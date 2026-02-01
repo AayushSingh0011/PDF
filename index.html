@@ -1,0 +1,316 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>IITIAN CSE Student Profile</title>
+</head>
+<body>
+
+<h2>IITIAN CSE – Student Profile Form</h2>
+
+<form method="POST">
+
+<label>Name:</label><br>
+<input type="text" name="name" required><br><br>
+
+<label>Room:</label><br>
+<input type="text" name="room"><br><br>
+
+<label>Age:</label><br>
+<input type="number" name="age"><br><br>
+
+<label>Year:</label><br>
+<input type="text" name="year"><br><br>
+
+<label>Interests:</label><br>
+<textarea name="interests"></textarea><br><br>
+
+<label>Hobbies:</label><br>
+<textarea name="hobbies"></textarea><br><br>
+
+<label>Sport:</label><br>
+<input type="text" name="sport"><br><br>
+
+<label>IIT / Institute Affiliation:</label><br>
+<input type="text" name="iwi"><br><br>
+
+<label>Cultural / Musical Activities:</label><br>
+<textarea name="cultural"></textarea><br><br>
+
+<label>Favourite Subject:</label><br>
+<input type="text" name="fav_subject"><br><br>
+
+<label>Favourite Authors / Books:</label><br>
+<textarea name="fav_books"></textarea><br><br>
+
+<label>Achievements / Successes:</label><br>
+<textarea name="achievements"></textarea><br><br>
+
+<button type="submit">Submit Profile</button>
+
+</form>
+
+</body>
+</html> -->
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fill THE FORM</title>
+</head>
+<body>
+
+<h2>FILL THE – FORM</h2>
+
+<form method="POST">
+
+<label>Name:</label><br>
+<input type="text" name="name" required><br><br>
+
+<label>Room:</label><br>
+<input type="text" name="room"><br><br>
+
+<label>Age:</label><br>
+<input type="number" name="age"><br><br>
+
+<label>Year:</label><br>
+<input type="text" name="year"><br><br>
+
+<label>Interests:</label><br>
+<textarea name="interests"></textarea><br><br>
+
+<label>Hobbies:</label><br>
+<textarea name="hobbies"></textarea><br><br>
+
+<label>Sport:</label><br>
+<input type="text" name="sport"><br><br>
+
+<label>IIT / Institute Affiliation:</label><br>
+<input type="text" name="iwi"><br><br>
+
+<label>Cultural / Musical Activities:</label><br>
+<textarea name="cultural"></textarea><br><br>
+
+<label>Favourite Subject:</label><br>
+<input type="text" name="fav_subject"><br><br>
+
+<label>Favourite Authors / Books:</label><br>
+<textarea name="fav_books"></textarea><br><br>
+
+<label>Achievements / Successes:</label><br>
+<textarea name="achievements"></textarea><br><br>
+
+<button type="submit">Submit Profile</button>
+
+</form>
+
+<hr>
+
+<!-- ✅ DOWNLOAD BUTTON -->
+<a href="/download">
+    <button type="button">Download Excel</button>
+</a>
+<br><br>
+<a href="/reset">
+    <button type="button" style="background:red;color:white;">
+        Start New Excel
+    </button>
+</a>
+
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IITIAN CSE Student Profile</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+
+        .container {
+            width: 850px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .success-box {
+            background: #e6ffed;
+            color: #0a7a32;
+            border: 1px solid #0a7a32;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 6px;
+            margin-top: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .full {
+            grid-column: 1 / 3;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .danger {
+            background: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>IITIAN CSE – Student Profile Form</h2>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="success-box">
+        ✅ {{ messages[0] }}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<form method="POST">
+
+<div class="grid">
+
+    <div>
+        <label>Name</label>
+        <input type="text" name="name" required>
+    </div>
+
+    <div>
+        <label>Room</label>
+        <input type="text" name="room">
+    </div>
+
+    <div>
+        <label>Age</label>
+        <input type="number" name="age">
+    </div>
+
+    <div>
+        <label>Year</label>
+        <input type="text" name="year">
+    </div>
+
+    <div>
+        <label>Sport</label>
+        <input type="text" name="sport">
+    </div>
+
+    <div>
+        <label>IIT / Institute Affiliation</label>
+        <input type="text" name="iwi">
+    </div>
+
+    <div class="full">
+        <label>Interests</label>
+        <textarea name="interests"></textarea>
+    </div>
+
+    <div class="full">
+        <label>Hobbies</label>
+        <textarea name="hobbies"></textarea>
+    </div>
+
+    <div class="full">
+        <label>Cultural / Musical Activities</label>
+        <textarea name="cultural"></textarea>
+    </div>
+
+    <div class="full">
+        <label>Favourite Subject</label>
+        <input type="text" name="fav_subject">
+    </div>
+
+    <div class="full">
+        <label>Favourite Authors / Books</label>
+        <textarea name="fav_books"></textarea>
+    </div>
+
+    <div class="full">
+        <label>Achievements / Successes</label>
+        <textarea name="achievements"></textarea>
+    </div>
+
+</div>
+
+<div class="actions">
+    <button type="submit">Submit Profile</button>
+</div>
+
+</form>
+
+<hr>
+
+<div class="actions">
+    <a href="/download">
+        <button type="button">Download Excel</button>
+    </a>
+
+    <a href="/reset">
+        <button type="button" class="danger">Start New Excel</button>
+    </a>
+</div>
+
+</div>
+
+</body>
+</html>
